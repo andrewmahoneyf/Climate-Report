@@ -38,8 +38,13 @@ included in the repo.
    file, so you need tools like `bzcat` to print it, you can select
    the first lines with `head` or use pager `more`.  The data contains the following
    variables: _longitude_, _latitude_,
-   _time_, airtemp, precipitation.  An example of the data looks like
-   this:
+   _time_, airtemp, precipitation.  
+   
+   *Pro Tip*: While `bzcat` decompresses the data and `head` or `more` print the data
+   think about how you can use both operations simultaneously. Think about using the
+   vertical bar, located above the enter button. It should produce this: | .
+   
+   An example of the data looks like this:
 ```
 longitude,latitude,time,airtemp,precipitation
 314.75,-14.25,1963-03-01,24.8999996185303,0.830000042915344
@@ -50,12 +55,11 @@ longitude,latitude,time,airtemp,precipitation
    longitude.  Longitude is degree east (Western hemisphere has
    longitude > 180), Latitude degree north.  Temperature is the monthly mean (deg C),
    precipitation is the monthly sum (cm).  The records for sea surface
-   are
-   there but the values are missing.  There are also missing values on
+   are there but the values are missing.  There are also missing values on
    land. 
 
 1. In order to facilitate testing, I have included a small test file
-   `temp_prec_small.csv.bz2` in the same folder.  You may copy that file
+   `temp_prec_subset.csv.bz2` in the same folder.  You may copy that file
    to your computer and use it for developing/testing the code. 
 
 Attempt to do the following steps by running it as a script
