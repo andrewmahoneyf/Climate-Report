@@ -61,10 +61,16 @@ longitude,latitude,time,airtemp,precipitation
 1. In order to facilitate testing, I have included a small test file
    `temp_prec_subset.csv.bz2` in the same folder.  You may copy that file
    to your computer and use it for developing/testing the code. 
+   
+   *Pro tip:* Be sure to be on your local machine and **NOT** the server when pulling files off the server. 
+   Think about the path that would be required on the server to access the file. 
 
 Attempt to do the following steps by running it as a script
 as `Rscript maps.R` at bash prompt.  If this does not work well, you can also
 start an interactive R session and `source()` the file from there.
+
+*Pro tip:* For Windows machines especially, there is no `Rscript` command. Either set it with a PATH in your 
+local enviroment or run the script in RStudio. 
 
 Note: it includes 170M observations, so just `read.csv()` takes
 about 10 minutes.  (You may check out faster `fread()` function in
