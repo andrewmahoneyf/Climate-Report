@@ -104,6 +104,17 @@ _data.table_ package).
 That's it!
 
 
+## Extra Credit
+
+Use much faster `data.table::fread` instead of `read.table` (and
+friends).  However, read the file by automatic parallel decompression
+without decompressing it manually.  I.e. tell `fread` that the file
+should be decompressed in parallel.
+
+Compare the time it takes to read the data in different ways (if you
+are using more than a single way).
+
+
 ## Notes on the server:
 
 * the server's name is _info201.ischool.uw.edu_
