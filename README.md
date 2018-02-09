@@ -32,8 +32,13 @@ included in the repo.
    You should know how to log in remotely, copy the files between
    the server and your computer, and execute R scripts remotely.
  
-1. From the command line, inspect the first few lines of 
-   data `temp_prec_1960+.csv.bz2` in directory `/opt/data`.  This
+1. The data is located in `/opt/data`.  There are three
+   temperature-precipitation files.  All have a similar structure.
+   You have to work with the middle-sized one
+   (`temp_prec_small.csv.bz2`).  Please don't use the large one
+   (1960+) as processing that takes ~50% of the server's memory.
+
+   From the command line, inspect the first few lines of data.  This
    contains [NOAA data](https://www.esrl.noaa.gov/psd/data/gridded/data.UDel_AirT_Precip.html) for land surface temperature and precipitation.
    It is a compressed
    file, so you need tools like `bzcat` to print it, you can select
