@@ -4,7 +4,10 @@
 
 ### Temperature
 
-insert your temperature images here
+
+insert your temperature images here.  You can put three plots on a
+single figure but the results will be tiny.  I recommend to use a
+separate figure for each year.
 
 comment the results.  Do the temperature patterns look reasonable?  Do
 you see major differences between years?
