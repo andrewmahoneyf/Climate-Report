@@ -16,8 +16,9 @@ run on the server, either from command line or from within R
 environment), 
 and a **session.sh** file where
 you include the shell commands you use on your laptop and on the
-server (need not to be runnable).  The stubs of the three files are
+server (this file does not have to be runnable).  The stubs of the three files are
 included in the repo.
+
 
 # The Problem
 
@@ -33,18 +34,13 @@ included in the repo.
  
 1. From the command line, inspect the first few lines of 
    data `temp_prec_1960+.csv.bz2` in directory `/opt/data`.  This
-   contains NOAA data for land surface temperature and precipitation.
+   contains [NOAA data](https://www.esrl.noaa.gov/psd/data/gridded/data.UDel_AirT_Precip.html) for land surface temperature and precipitation.
    It is a compressed
    file, so you need tools like `bzcat` to print it, you can select
    the first lines with `head` or use pager `more`.  The data contains the following
    variables: _longitude_, _latitude_,
-   _time_, airtemp, precipitation.  
-   
-   *Pro Tip*: While `bzcat` decompresses the data and `head` or `more` print the data
-   think about how you can use both operations simultaneously. Think about using the
-   vertical bar, located above the enter button. It should produce this: | .
-   
-   An example of the data looks like this:
+   _time_, airtemp, precipitation.  An example of the data looks like
+   this:
 ```
 longitude,latitude,time,airtemp,precipitation
 314.75,-14.25,1963-03-01,24.8999996185303,0.830000042915344
@@ -55,7 +51,8 @@ longitude,latitude,time,airtemp,precipitation
    longitude.  Longitude is degree east (Western hemisphere has
    longitude > 180), Latitude degree north.  Temperature is the monthly mean (deg C),
    precipitation is the monthly sum (cm).  The records for sea surface
-   are there but the values are missing.  There are also missing values on
+   are
+   there but the values are missing.  There are also some missing values on
    land. 
 
 1. In order to facilitate testing, I have included a small test file
@@ -88,6 +85,9 @@ _data.table_ package).
    file by using the corresponding graphic device like
    `jpeg("map.jpg")`.  Don't forget to close the device afterwards!
    
+   Note: there are many ways to create such maps in R, you may use
+   _ggplot_, base R graphics functions, and other libraries.
+   
 1. Copy the map files from server to your laptop.
 
 1. Write a brief report where you explain what did you find.  (The
@@ -99,30 +99,6 @@ _data.table_ package).
 That's it!
 
 
-## Extra Credit:
-
-1. Create ssh keys, copy these to the server, and use passwordless
-   login.  Explain how you did it!
-
-
-## Extra Task (not graded!)
-
-If you feel you need a bit more challenging task then I have a
-suggestion: make the plots for every year in the data (or potentially
-every month).  Save the results and convert these into an animation.
-Ensure that the temperature/precipitation scale is the same across the
-years!
-
-If you want to do even more advanced stuff, I recommend to implement
-the above in parallel where different CPU-s work on different dates,
-and later you will compile all the images into an animation.  You may
-attempt to create a PSOCK cluster directly from R session in your
-laptop.
-
-If you are interested in trends in global temperature, you may also
-calculate the yearly averages and make the corresponding long-term plots.
-
-
 ## Notes on the server:
 
 * the server's name is _info201.ischool.uw.edu_
@@ -131,8 +107,8 @@ calculate the yearly averages and make the corresponding long-term plots.
 
 * the data is in `/opt/data/`.
 
-* the server should have plenty of disk space (500 + 500G), and memory (32G) for at least two
-  students to work at the same time
+* the server should have plenty of disk space (500G), but may be low
+  on memory (32G) if many people are working there at the same time.
 
 * if you need to do something with superuser privileges, you have to
   contact Ott.
