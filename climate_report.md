@@ -3,26 +3,18 @@
 ## North American Temperature and Precipitation, 1960-2014
 
 ### Temperature
+![1960 Temp](plots/Rplot001.jpeg?raw=true "1960 Temp")
+![1987 Temp](plots/Rplot003.jpeg)
+![2014 Temp](plots/Rplot005.jpeg)
 
-
-insert your temperature images here.  You can put three plots on a
-single figure but the results will be tiny.  I recommend to use a
-separate figure for each year.
-
-comment the results.  Do the temperature patterns look reasonable?  Do
-you see major differences between years?
-
+Considering this data is for the month of July, temperatures throughout North America
+should be relatively hot which is shown. The years are almost identical which is also interesting,
+but should be accuracte.
 
 ### Precipitation
+![1960 Precipitation](plots/Rplot002.jpeg)
+![1987 Precipitation](plots/Rplot004.jpeg)
+![2014 Precipitation](plots/Rplot006.jpeg)
 
-insert your precipitation images here
-
-comment the results.  Do the precipitation patterns look reasonable?  Do
-you see major differences between years?
-
-
-### Note: 
-
-you cannot do any conclusions about long-term trend based on just 3
-figures.  If you are interested, you are welcome to explore long-term
-trends in these data, but be sure to use more suitable methods.
+Similar to temperature, percipitation doesn't change much for the differnt times. The percentage is very low
+which is normal for the month of July.
