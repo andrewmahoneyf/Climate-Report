@@ -12,7 +12,7 @@
 #
 # -------------------- local commands --------------------
 # 1. create a directory for this project.
-mkdir data
+mkdir data plots
 # 2. log onto the server
 ssh drew102@info201.ischool.uw.edu
 # 3. copy the small data subset from the server to your local machine
@@ -22,10 +22,10 @@ scp drew102@info201.ischool.uw.edu:/opt/data/temp_prec_subset.csv.bz2 ./data/
 sudo chmod +x maps.R
 scp ./maps.R drew102@info201.ischool.uw.edu:~/drew102-a6
 # 5. (after succesfully running the script remotely): copy the output files back to your computer
-scp otoomet@info201.ischool.uw.edu:~/drew102-a6/*.jpeg .
+scp drew102@info201.ischool.uw.edu:~/drew102-a6/*.jpeg ./plots/
 # 6. inspect that the copy was successful
 ls
-open 
+open *.jpeg
 
 # -------------------- remote commands --------------------
 # 1. explore the data directory '/opt/data'.  How do you find out the size of the files?
@@ -42,8 +42,8 @@ cd drew102-a6 && ls -al
 Rscript maps.R
 # 6. How do you install missing R packages?
 R
-install.packages("foo")
-# or
-Rscript -e "install.packages('foo')"
+install.packages(c("ggplot2", "data.table", "dplyr", "mapproj"))
+# or but doesnt work without creating private library
+Rscript -e "install.packages(c('ggplot2', 'data.table', 'dplyr', 'mapproj'))"
 # 7. (after running the script): inspect the folder for output files
 ls
